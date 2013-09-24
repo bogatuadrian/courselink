@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130916164118) do
+ActiveRecord::Schema.define(version: 20130924094810) do
 
   create_table "courses", force: true do |t|
     t.string   "name"
@@ -45,9 +45,11 @@ ActiveRecord::Schema.define(version: 20130916164118) do
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "remember_token"
   end
 
   add_index "users", ["name", "email"], name: "index_users_on_name_and_email"
+  add_index "users", ["remember_token"], name: "index_users_on_remember_token"
 
   create_table "years", force: true do |t|
     t.integer  "year"

@@ -4,12 +4,14 @@ Courselink::Application.routes.draw do
 
   match '/home', to: 'welcome#home', via: 'get'
   match '/signup', to: 'users#new', via: 'get'
-  match '/signin', to: 'welcome#home', via: 'get'
+  match '/signin', to: 'sessions#new', via: 'get'
+  match '/signout', to: 'sessions#destroy', via: 'delete'
 
   # You can have the root of your site routed with "root"
   root 'welcome#home'
 
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
