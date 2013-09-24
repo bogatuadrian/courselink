@@ -3,11 +3,13 @@ Courselink::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   match '/home', to: 'welcome#home', via: 'get'
-  match '/signup', to: 'welcome#home', via: 'get'
+  match '/signup', to: 'users#new', via: 'get'
   match '/signin', to: 'welcome#home', via: 'get'
 
   # You can have the root of your site routed with "root"
   root 'welcome#home'
+
+  resources :users
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
