@@ -4,9 +4,16 @@
     <div class="container">
       <%= link_to image_tag('logo-low.png', width: 128), root_path, id: "logo" %>
       <nav>
+      <% if signed_in? %>
+        <ul class="nav pull-right">
+          <li><%= link_to "Home", home_path %></li>
+          <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
+        </ul>
+      <%else %>
         <ul class="nav pull-right">
           <li><%= link_to "Home", home_path %></li>
         </ul>
+      <% end %>
       </nav>
     </div>
   </div>
