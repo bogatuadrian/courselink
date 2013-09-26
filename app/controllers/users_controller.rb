@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   attr_accessor :name, :email
-  before_action :signed_in_user,  only: [:index, :edit, :update, :distroy]
+  before_action :signed_in_user,  only: [:index, :edit, :update, :destroy]
   before_action :correct_user,    only: [:edit, :update]
 
 
@@ -20,11 +20,12 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      #sign_in @user
-      redirect_to @user
+      sign_in @user
+      redirect_to root_url
     else
       render 'new'
     end
+
   end
 
   def edit

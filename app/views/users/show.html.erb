@@ -1,13 +1,5 @@
 
 <% provide :title, "#{@user.name}" %>
 
-<div class="row">
-  <aside class="span4">
-    <section>
-      <%= @user.name %>
-      <%= @user.email %>
-    </section>
-  </aside>
-</div>
-
+<%= render @user %>
 

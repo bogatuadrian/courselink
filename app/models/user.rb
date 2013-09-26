@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+  # relations
+  has_many :questions
+  has_many :answers
+
   # before conditions
   before_create :create_remember_token
   before_save { self.email = email.downcase }

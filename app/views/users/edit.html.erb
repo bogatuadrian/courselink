@@ -2,7 +2,7 @@
 <div class="center">
   <%= form_for @user do |f| %>
     <div class="row">
-    <h1>Sign up</h1>
+    <h1>Edit profile</h1>
       <%= render 'shared/input_user_data_errors', object: f.object %>
 
       <%= f.label :name %>
@@ -18,7 +18,7 @@
       <%= f.password_field :password_confirmation %>
 
     <div class="row">
-      <%= f.submit "Sign up", class: "btn btn-primary btn-large" %>
+      <%= f.submit "Update profile", class: "btn btn-primary btn-large" %>
     </div>
   </div>
   <% end %>

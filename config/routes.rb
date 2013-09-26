@@ -6,6 +6,7 @@ Courselink::Application.routes.draw do
   match '/signup', to: 'users#new', via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'
+  match '/users', to: 'users#index', via: 'get'
 
   # You can have the root of your site routed with "root"
   root 'welcome#home'
