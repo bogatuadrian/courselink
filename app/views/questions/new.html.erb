@@ -1,0 +1,19 @@
+
+<div class="center">
+  <%= form_for @question do |f| %>
+    <div class="row">
+    <h1>Ask question</h1>
+      <!--%= render 'shared/input_user_data_errors', object: f.object %-->
+
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+
+      <%= f.label :content %>
+      <%= f.text_field :content %>
+
+    <div class="row">
+      <%= f.submit "Ask", class: "btn btn-primary btn-large form-btn" %>
+    </div>
+  </div>
+  <% end %>
+</div>

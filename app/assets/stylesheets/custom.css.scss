@@ -1,6 +1,7 @@
 
 @import "bootstrap";
 
+/* general */
 
 html {
   overflow-y: scroll;
@@ -26,17 +27,21 @@ textarea {
   margin-bottom: 60px;
 }
 
-/* header */
+
+/* HEADER style */
 
 #logo {
   float: left;
-  padding-top: 8px;
-  padding-bottom: 7px;
+
+  vertical-align: middle;
+  //padding-top: 4px;
+  //padding-bottom: 4px;
 }
 
 .btn-header {
-  padding-top: 6px;
-  padding-bottom: 6px;
+  vertical-align: middle !important;
+  //padding-top: 6px;
+  //padding-bottom: 6px;
 }
 
 .btn-header:hover {
@@ -47,7 +52,19 @@ textarea {
     background-color: #111111;
 }
 
-/* footer */
+
+/* CONTENT styles */
+
+
+/* Form submit buttons (sign in, sign up) */
+.form-btn {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+/* FOOTER style */
 
 footer {
   margin-top: 45px;
