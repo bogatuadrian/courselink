@@ -10,6 +10,10 @@ gem 'bootstrap-will_paginate'
 # Pagination
 gem 'will_paginate'
 
+gem 'rails_12factor'
+
+gem 'ruby'
+
 # Testing
 gem 'faker'
 
