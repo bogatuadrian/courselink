@@ -18,12 +18,8 @@ gem 'ruby'
 gem 'faker'
 
 # Use sqlite3 as the database for Active Record
-group :development do
-  gem 'sqlite3'
-end
-group :prodution do
-  gem 'pg'
-end
+gem 'pg'
+gem 'sqlite3'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
