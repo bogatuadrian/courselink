@@ -9,7 +9,7 @@ class WelcomeController < ApplicationController
 
     universities.each do |uni|
       uni.courses.each do |course|
-        @array << "#{uni.alias}/#{course.alias}"
+        @array << ["#{uni.alias}/#{course.alias}", course.id]
       end
     end
 
