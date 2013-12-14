@@ -13,6 +13,9 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = Question.new(params[:question])
+    @question = Question.new(params.require(:question).permit(:title, :content))
+    @question.save
+
+    redirect_to url_for(:controller => :welcome, :action => :show)
   end
 end
