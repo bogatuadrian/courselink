@@ -2,5 +2,5 @@
   <%= text_field_tag "answer[content]", nil, placeholder: "Answer question..." %>
   <%= hidden_field_tag "answer[question_id]", question.id %>
   <%= hidden_field_tag "answer[user_id]", current_user.id %>
-  <%= submit_tag "Answer", class: "btn btn-primary form-btn" %>
+  <%= submit_tag "Answer", class: "btn btn-primary form-btn answer-btn" %>
 <% end %>

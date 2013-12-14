@@ -1,7 +1,7 @@
 <% @questions.each do |question| %>
   <% if !question.user.nil? && !question.course.nil?%>
     <div class="question-block">
-      <div class="question-info"><%= question.user.name %></div>
+      <div class="question-info"><%= question.user.name %> asked:</div>
       <div class="question-block-content"><%= question.content %></div>
       <%= question.course.university.alias %> / <%= question.course.alias %>
     </div>
@@ -12,7 +12,7 @@
         </div>
         <div class="answer">
           <%= answer.content %>
-        <div>
+        </div>
       <% end %>
     </div>
     <div class="answer-question">
