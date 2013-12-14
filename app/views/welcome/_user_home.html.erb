@@ -25,6 +25,6 @@
 	 	</div>
   	<% end %>
 
-    <%= render 'shared/feed' %>
+    <%= render partial: 'shared/feed', locals: {:questions => questions} %>
   </div>
 </div>

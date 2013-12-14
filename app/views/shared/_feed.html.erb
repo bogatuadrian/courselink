@@ -1,3 +1,9 @@
 
 Hello World!
 
+<% questions.each do |question| %>
+	<div>
+		<%= question.user.name unless question.user.nil?%>
+		<%= question.content %>
+	</div>
+<% end %>
