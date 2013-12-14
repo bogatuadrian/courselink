@@ -1,5 +1,5 @@
 class University < ActiveRecord::Base
 
-	has_one :Course
+	has_many :courses
 
 end

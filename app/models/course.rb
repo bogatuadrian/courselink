@@ -1,5 +1,6 @@
 class Course < ActiveRecord::Base
 
-	belongs_to :University
+	belongs_to :university
+	has_many :questions
 
 end
