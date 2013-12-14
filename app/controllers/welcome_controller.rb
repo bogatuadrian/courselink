@@ -2,6 +2,8 @@ class WelcomeController < ApplicationController
 
 	def show
     @questions = Question.all
+    @universities = University.all
+    @courses = Course.all
     @sections = sections
 	end
 

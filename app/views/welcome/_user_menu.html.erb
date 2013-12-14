@@ -1,0 +1,10 @@
+<ul>
+  <% @universities.each do |uni| %>
+    <li><%= uni.alias %></li>
+    <ul>
+      <% uni.courses.each do |course| %>
+        <li><%= course.alias %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</ul>

@@ -17,7 +17,7 @@ class QuestionsController < ApplicationController
     question.user_id = current_user.id
     question.save
 
-    redirect_to url_for(controller: :welcome, action: :show)
+    redirect_to root_url
   end
 
   private

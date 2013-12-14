@@ -1,13 +1,10 @@
-
 <%= form_tag ({:controller => "questions", :action => "create"}), ({:method => :post}) do %>
   <%= label_tag :question %>
   <%= text_field_tag "question[content]", nil, placeholder: "Pose your question..." %>
 
   <%= label_tag :course %>
-  <%= select_tag :id, options_for_select(sections), :class => "dropdown" %>
+  <%= select_tag :id, options_for_select(@sections), :class => "dropdown" %>
   <div>
     <%= submit_tag "Ask", class: "btn btn-primary form-btn" %>
   </div>
 <% end %>
-
-
