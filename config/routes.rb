@@ -6,7 +6,7 @@ Courselink::Application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  match '/home', to: 'welcome#home', via: 'get'
+  match '/home', to: 'welcome#show', via: 'get'
   match '/signup', to: 'users#new', via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'
@@ -14,7 +14,7 @@ Courselink::Application.routes.draw do
 
   match '/questions', to: 'questions#index', via: 'get'
   # You can have the root of your site routed with "root"
-  root 'welcome#home'
+  root 'welcome#show'
 
   resources :users
   resources :questions

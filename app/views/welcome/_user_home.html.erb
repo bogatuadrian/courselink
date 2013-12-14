@@ -4,6 +4,7 @@
     <%= render current_user %>
   </aside>
   <div class="span8">
+  	<%= render partial: 'questions/new', locals: {question: @question} %>
     <%= render 'shared/feed' %>
   </div>
 </div>
