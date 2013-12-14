@@ -1,9 +1,9 @@
-
-Hello World!
-
 <% questions.each do |question| %>
-	<div>
-		<%= question.user.name unless question.user.nil?%>
-		<%= question.content %>
-	</div>
+  <% if !question.user.nil? && !question.course.nil?%>
+    <div class="question-block">
+      <div class="question-block-username"><%= question.user.name %></div>
+      <div class="question-block-content"><%= question.content %></div>
+      <%= question.course.university.alias %>/<%= question.course.alias %>
+    </div>
+  <% end %>
 <% end %>
