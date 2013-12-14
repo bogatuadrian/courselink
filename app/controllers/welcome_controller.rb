@@ -5,18 +5,14 @@ class WelcomeController < ApplicationController
 
     universities = University.all
 
-    res = []
+    @array = []
 
     universities.each do |uni|
-      ary = []
       uni.courses.each do |course|
-        ary << "#{uni.alias}/#{course.alias}"
+        @array << "#{uni.alias}/#{course.alias}"
       end
-
-      res << ary
     end
 
-    @array = res
 	end
 
 end
