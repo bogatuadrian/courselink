@@ -4,7 +4,27 @@
     <%= render current_user %>
   </aside>
   <div class="span8">
-  	<%= render partial: 'questions/new', locals: {question: @question} %>
+
+   	<%= form_tag ({:controller => "questions", :action => "create"}), ({:method => :post}) do %>
+	    <div class="row">
+		    <h1>Ask question</h1>
+
+		      <%= label_tag :title %>
+		      <%= text_field_tag "question[title]" %>
+
+		      <%= label_tag :content %>
+		      <%= text_field_tag "question[content]" %>
+
+		      <%= label_tag :course %>
+		      <div>
+		        <%= select_tag :id, options_for_select(@array), :class => "dropdown" %>
+		      </div>
+		    <div class="row">
+		      <%= submit_tag "Ask", class: "btn btn-primary btn-large form-btn" %>
+		    </div>
+	 	</div>
+  	<% end %>
+
     <%= render 'shared/feed' %>
   </div>
 </div>

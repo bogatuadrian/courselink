@@ -44,7 +44,5 @@ namespace :db do
 
       course.save
     end
-
-
   end
 end
