@@ -15,9 +15,8 @@ class QuestionsController < ApplicationController
   def create
     question = Question.new(question_params)
     question.course_id = course_id
+    question.user_id = current_user.id
     question.save
-
-    #raise params.inspect.to_s
 
     redirect_to url_for(controller: :welcome, action: :show)
   end
