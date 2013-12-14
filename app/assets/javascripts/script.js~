@@ -1,0 +1,16 @@
+$('li').each(function(i) {
+    $(this).text('Item ' + (i + 1))
+});
+
+var list = $('ul'),
+    start = 0
+    items = list.find('li').slice(0, 3).show().end(),
+    more = $('<li>Show more...</li>').click(function() {
+        start = start + 3
+        var newItems = items.slice(start, start + 3)
+        items.filter(':visible').add(newItems).toggle(500);
+        if (newItems.length < 3) {
+            more.hide()
+        }
+    }).show()
+    list.append(more);

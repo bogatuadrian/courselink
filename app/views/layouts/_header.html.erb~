@@ -1,0 +1,71 @@
+
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to image_tag('logo-low.png'), root_path, id: "logo" %>
+      <nav>
+      <% if signed_in? %>
+        <ul class="nav pull-right">
+          <li class="btn-header"><%= link_to "Users", users_path, class: "btn-header" %></li>
+          <li id="fat-menu" class="dropdown btn-header">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <div>
+                  <%= gravatar_for(current_user, size: 32) %>
+                  <%= current_user.name %>
+                </div>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "View profile", current_user %></li>
+              <li><%= link_to "Edit profile",edit_user_path(current_user) %></li>
+              <li class="divider"></li>
+              <li><%= link_to "Sign out", signout_path, method: :delete %></li>
+            </ul>
+          </li>
+        </ul>
+      <%else %>
+        <ul class="nav pull-right">
+          <li class="btn-header"><%= link_to "Sign up", signup_path %></li>
+          <li class="btn-header"><%= link_to "Sign in", signin_path %></li>
+        </ul>
+      <% end %>
+      </nav>
+    </div>
+  </div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        	<h3>Navigation</h3>
+
+    </div>
+    <div id="sidebar" class="list-group">
+			<a href="#" class="list-group-item active">
+				<i class="icon-dashboard"></i> Dashboard
+			</a>
+			<a href="#users" class="list-group-item" data-toggle="collapse" data-parent="#sidebar">	
+				<i class="icon-group"></i> Users<span class="badge bg_danger">0</span>
+			</a>
+
+    <div id="users" class="list-group subitem collapse in">
+			<a href="#" class="list-group-item">
+				<i class="icon-caret-right"></i> Users<span class="badge bg_danger">0</span></a>
+			<a href="#" class="list-group-item">
+				<i class="icon-caret-right"></i> Create User</a>
+			<a href="#" class="list-group-item">
+				<i class="icon-caret-right"></i> Create Group</a>
+
+    </div>
+  	<a href="#articles" class="list-group-item" data-toggle="collapse" data-parent="#sidebar">
+				<i class="icon-file-text"></i> Articles<span class="badge bg_danger">0</span></a>
+
+    <div id="articles" class="list-group subitem collapse">	
+			<a href="#" class="list-group-item bg_warning">
+				<i class="icon-caret-right"></i> Articles<span class="badge bg_danger">0</span></a>
+			<a href="#" class="list-group-item">
+				<i class="icon-caret-right"></i> Create Article</a>
+
+    </div>
+    </div>
+</div>
+
+</header>
+
