@@ -6,7 +6,7 @@ class AnswersController < ApplicationController
     answer.user_id = user_id
     answer.save
 
-    redirect_to root_url
+    redirect_to(:back)
   end
 
   private
