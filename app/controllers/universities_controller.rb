@@ -10,6 +10,11 @@ class UniversitiesController < ApplicationController
   # GET /universities/1
   # GET /universities/1.json
   def show
+    university = University.find_by({:id => params[:id]})
+    @questions =[]
+    university.courses.each do |course|
+      @questions.concat course.questions
+    end
   end
 
   # GET /universities/new
