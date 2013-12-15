@@ -1,4 +1,4 @@
-
+<div class="chenar1">
 <%= form_tag ({:controller => "questions", :action => "create"}), ({:method => :post}) do %>
   <%= label_tag :question %>
   <%= text_field_tag "question[content]", nil, placeholder: "Pose your question..." %>
@@ -8,5 +8,6 @@
   <div>
     <%= submit_tag "Ask", class: "btn btn-primary form-btn ask-btn" %>
   </div>
+</div>
 <% end %>
 
