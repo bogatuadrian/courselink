@@ -1,12 +1,14 @@
 
 <div class="row">
   <aside class="span4">
-    <%= render current_user %>
+    <div>
+      <%= render current_user %>
+    </div>
     <br> <!-- ugliest thing in HTML, this br -->
     <%= render partial: 'user_menu' %>
   </aside>
 
-  <div class="span8">
+  <div class="row span8">
     <div>
       <%= render partial: 'question_form' %>
     </div>
