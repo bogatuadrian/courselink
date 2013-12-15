@@ -34,6 +34,12 @@
     </div>
 </div>
 -->
+<aside class="span4">
+  <!--<div>
+    <%= render current_user %>
+  </div>
+  <br> --> <!-- ugliest thing in HTML, this br -->
+
 <div class="panel panel-default">
   <div id="sidebar" class="list-group">
       <% @universities.each do |uni| %>
@@ -41,8 +47,6 @@
         <a href=<%= '#' + "courses#{uni.id}" %> data-toggle="collapse" data-parent="#sidebar">+</a>
         <%= link_to uni.alias, uni %>
         </div>
-        <!--, class: "list-group-item", "data-toggle" => "collapse", "data-parent" => "#sidebar" %>
-        -->
         <div id=<%= "courses#{uni.id}" %> class="list-group subitem collapse in">
         <% uni.courses.each do |course| %>
           <%= link_to course.alias, course, class: "list-group-item" %>
@@ -51,3 +55,4 @@
       <% end %>
   </div>
 </div>
+</aside>

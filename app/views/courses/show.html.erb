@@ -1,31 +1,22 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <%= render partial: 'welcome/user_menu' %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @course.name %>
-</p>
+  <div class="row span8">
+    <h3><%= @course.name %></h3>
 
-<p>
-  <strong>Alias:</strong>
-  <%= @course.alias %>
-</p>
+    <%= form_tag ({:controller => "questions", :action => "create"}), ({:method => :post}) do %>
+      <%= label_tag :question %>
+      <%= text_field_tag "question[content]", nil, placeholder: "Pose your question..." %>
 
-<p>
-  <strong>Year:</strong>
-  <%= @course.year %>
-</p>
+      <%= hidden_field_tag "id", @course.id %>
 
-<%= form_tag ({:controller => "questions", :action => "create"}), ({:method => :post}) do %>
-  <%= label_tag :question %>
-  <%= text_field_tag "question[content]", nil, placeholder: "Pose your question..." %>
+      <div>
+        <%= submit_tag "Ask", class: "btn btn-primary form-btn ask-btn" %>
+      </div>
+    <% end %>
 
-  <%= hidden_field_tag "id", @course.id %>
-
-  <div>
-    <%= submit_tag "Ask", class: "btn btn-primary form-btn ask-btn" %>
+    <div>
+      <%= render partial: 'shared/feed' %>
+    </div>
   </div>
-<% end %>
-
-<div>
-  <%= render partial: 'shared/feed' %>
 </div>

@@ -1,15 +1,11 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <%= render partial: 'welcome/user_menu' %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @university.name %>
-</p>
+  <div class="row span8">
+    <h3><%= @university.name %></h3>
 
-<p>
-  <strong>Alias:</strong>
-  <%= @university.alias %>
-</p>
-
-<div>
-  <%= render partial: 'shared/feed' %>
+    <div>
+      <%= render partial: 'shared/feed' %>
+    </div>
+  </div>
 </div>

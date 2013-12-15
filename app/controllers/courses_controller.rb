@@ -10,6 +10,7 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
+    @universities = University.all
     course = Course.find_by({:id => params[:id]})
     @questions = course.questions
   end

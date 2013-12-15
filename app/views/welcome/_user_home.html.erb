@@ -1,16 +1,10 @@
 
 <div class="row">
-  <aside class="span4">
-    <div>
-      <%= render current_user %>
-    </div>
-    <br> <!-- ugliest thing in HTML, this br -->
-    <%= render partial: 'user_menu' %>
-  </aside>
+  <%= render partial: 'welcome/user_menu' %>
 
   <div class="row span8">
     <div>
-      <%= render partial: 'question_form' %>
+      <%= render partial: 'welcome/question_form' %>
     </div>
     <div>
       <%= render partial: 'shared/feed' %>
