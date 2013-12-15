@@ -1,6 +1,6 @@
 
 <% if signed_in? %>
-  <%= render 'user_home' %>
+  <%= render partial: 'user_home', locals: {questions: @questions, universities: @universities}  %>
 <% else %>
   <%= render 'visitor' %>
 <% end %>

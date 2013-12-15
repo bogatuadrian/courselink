@@ -1,0 +1,11 @@
+<ul>
+  <% @universities.each do |uni| %>
+    <li><%= link_to uni.alias, uni %></li>
+    <ul>
+      <% uni.courses.each do |course| %>
+        <li><%= link_to course.alias, course %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</ul>
+

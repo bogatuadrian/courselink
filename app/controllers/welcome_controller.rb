@@ -1,18 +1,27 @@
 class WelcomeController < ApplicationController
 
 	def show
-		@question = Question.new
+    @questions = Question.all
+    @universities = University.all
+    @courses = Course.all
+    @sections = sections
+	end
 
-    universities = University.all
+  private
 
-    @array = []
+    def sections
+      universities = University.all
+      array = Array.new
 
-    universities.each do |uni|
-      uni.courses.each do |course|
-        @array << ["#{uni.alias}/#{course.alias}", course.id]
+      universities.each do |uni|
+        uni.courses.each do |course|
+          array << ["#{uni.alias}/#{course.alias}", course.id]
+        end
       end
+
+      array
     end
 
-	end
+
 
 end
