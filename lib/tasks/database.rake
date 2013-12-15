@@ -11,17 +11,25 @@ namespace :db do
     uni = University.new(uni_params)
     uni.save
 
-    4.times do |i|
-      course_params = {
-        year: i,
-        name: "Materia #{i}",
-        alias: "M#{i}"
+    courses = [
+      { name: "Algoritmi Paraleli si Distribuiti",
+        alias: "APD",
+        year: 3
+      },
+      { name: "Proiectarea Algoritmilor",
+        alias: "PA",
+        year: 2
+      },
+      { name: "Bazele Electrotehnicii",
+        alias: "ELTH",
+        year: 1
       }
+    ]
 
-      course = Course.new(course_params)
-      course.university_id = uni.id
-
-      course.save
+    courses.each do |course|
+      c = Course.new(course)
+      c.university_id = uni.id
+      c.save
     end
 
     uni_params = {
@@ -32,17 +40,25 @@ namespace :db do
     uni = University.new(uni_params)
     uni.save
 
-    4.times do |i|
-      course_params = {
-        year: i,
-        name: "Materia #{i}",
-        alias: "M#{i}"
+    courses = [
+      { name: "Limbaje de Asamblare",
+        alias: "LA",
+        year: 1
+      },
+      { name: "Microeconomie",
+        alias: "MicroEcon",
+        year: 2
+      },
+      { name: "Structuri de date",
+        alias: "SDD",
+        year: 3
       }
+    ]
 
-      course = Course.new(course_params)
-      course.university_id = uni.id
-
-      course.save
+    courses.each do |course|
+      c = Course.new(course)
+      c.university_id = uni.id
+      c.save
     end
   end
 end
