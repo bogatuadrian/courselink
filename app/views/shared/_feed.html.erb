@@ -1,13 +1,14 @@
-<br> <br>
-
 <div class="question">
 	<% @questions.each do |question| %>
   <% if !question.user.nil? && !question.course.nil?%>
 
 		<div class="question-block row span8">
 			<div class="chenar_name">
-			 	 <div class="question-info"> <%= link_to question.user.name, question.user %> asked:</div>
-			</div>
+			 	 <div class="question-info"> 
+           <%= link_to gravatar_for(question.user, size: 24), question.user %>
+          <%= link_to question.user.name, question.user %> asked:
+          </div>
+      </div>
 		<hr > </hr>
     	<div class="question-block-content"><%= question.content %></div>
     	<%= question.course.university.alias %> / <%= question.course.alias %>
@@ -17,6 +18,7 @@
 	    <% question.answers.each do |answer| %>
 				<div class="answer-block">
 			    <div class="answer-info">
+            <%= link_to gravatar_for(answer.user, size: 24), answer.user %>
 			      <%= link_to answer.user.name, answer.user %> answered:
 			    </div>
 					<hr> </hr>
