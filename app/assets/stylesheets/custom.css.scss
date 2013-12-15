@@ -95,7 +95,11 @@ hr {
 	background-color: #eee;
   padding-left:4px
 }
+#answer_content {
+	margin-top:10px;
+	margin-left:20px !important;
 
+}
 .question {
 	//position:fixed;
 	right:20px;
@@ -107,9 +111,7 @@ hr {
     margin-bottom: 10px;
 }
 
-.answer-question {
-	margin-left:20px;
-	}
+
 
 /* FOOTER style */
 
