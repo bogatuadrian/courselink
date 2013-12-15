@@ -1,33 +1,35 @@
-<% @questions.each do |question| %>
+<div class="question">
+	<% @questions.each do |question| %>
   <% if !question.user.nil? && !question.course.nil?%>
 
-			<div class="question-block">
+		<div class="question-block row span8">
 			<div class="chenar_name">
-		   	 <div class="question-info"> <%= link_to question.user.name, question.user %> asked:</div>
+			 	 <div class="question-info"> <%= link_to question.user.name, question.user %> asked:</div>
 			</div>
-			<hr > </hr>
-		    	<div class="question-block-content"><%= question.content %></div>
-		    	<%= question.course.university.alias %> / <%= question.course.alias %>
-		  </div>
-		  <div class="answers-block">
-		    <% question.answers.each do |answer| %>
-					<div class="answer-block">
-				    <div class="answer-info">
-				      <%= link_to answer.user.name, answer.user %> answered:
-				    </div>
-						<hr> </hr>
-				    <div class="answer">
-				      <%= answer.content %>
-				    </div>
-					</div>
-		    <% end %>
-		  </div>
-	</div>
-		  <div class="answer-question">
-		    <%= render partial: 'shared/answer_form', locals: { question: question } %>
-		  </div>
+		<hr > </hr>
+    	<div class="question-block-content"><%= question.content %></div>
+    	<%= question.course.university.alias %> / <%= question.course.alias %>
+	  </div>
+
+	  <div class="answers-block row span8">
+	    <% question.answers.each do |answer| %>
+				<div class="answer-block">
+			    <div class="answer-info">
+			      <%= link_to answer.user.name, answer.user %> answered:
+			    </div>
+					<hr> </hr>
+			    <div class="answer">
+			      <%= answer.content %>
+			    </div>
+				</div>
+	    <% end %>
+	  </div>
+  <div class="answer row span8">
+    <%= render partial: 'shared/answer_form', locals: { question: question } %>
+  </div>
 
     <br><!-- somebody please remove this shitty break!
              Hint: Use fucking CSS (margin-bottom somsing, somsing in class question-block in custom.css.scss) -->
   <% end %>
 <% end %>
+</div>
