@@ -15,6 +15,17 @@
   <%= @course.year %>
 </p>
 
+<%= form_tag ({:controller => "questions", :action => "create"}), ({:method => :post}) do %>
+  <%= label_tag :question %>
+  <%= text_field_tag "question[content]", nil, placeholder: "Pose your question..." %>
+
+  <%= hidden_field_tag "id", @course.id %>
+
+  <div>
+    <%= submit_tag "Ask", class: "btn btn-primary form-btn ask-btn" %>
+  </div>
+<% end %>
+
 <div>
   <%= render partial: 'shared/feed' %>
 </div>
