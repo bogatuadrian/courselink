@@ -1,4 +1,6 @@
 Courselink::Application.routes.draw do
+  resources :follow_relationships
+
   resources :courses
 
   resources :universities

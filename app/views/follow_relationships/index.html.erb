@@ -1,0 +1,29 @@
+<h1>Listing follow_relationships</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Question</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @follow_relationships.each do |follow_relationship| %>
+      <tr>
+        <td><%= follow_relationship.user_id %></td>
+        <td><%= follow_relationship.question_id %></td>
+        <td><%= link_to 'Show', follow_relationship %></td>
+        <td><%= link_to 'Edit', edit_follow_relationship_path(follow_relationship) %></td>
+        <td><%= link_to 'Destroy', follow_relationship, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Follow relationship', new_follow_relationship_path %>
