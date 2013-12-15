@@ -1,12 +1,19 @@
 <% provide :title, "#{@user.name}" %>
 
-<div>
-	<%= gravatar_for(@user, size: 150) %>
-</div>
+<div class="row">
 
-<%= render @user %>
+  <aside class="span4">
+  <div>
+    <%= gravatar_for(@user, size: 150) %>
+  </div>
+  <%= render @user %>
+  </aside>
 
-<div>
-  <%= render partial: 'shared/feed' %>
+  <div class="row span8">
+    <div>
+      <%= render partial: 'shared/feed' %>
+    </div>
+  </div>
+
 </div>
 
