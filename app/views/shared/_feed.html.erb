@@ -13,7 +13,7 @@
 		    <% question.answers.each do |answer| %>
 					<div class="answer-block">
 				    <div class="answer-info">
-				      <%= answer.user.name %> answered:
+				      <%= link_to answer.user.name, answer.user %> answered:
 				    </div>
 						<hr> </hr>
 				    <div class="answer">
