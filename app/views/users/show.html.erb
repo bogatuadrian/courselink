@@ -6,7 +6,30 @@
   <div>
     <%= gravatar_for(@user, size: 150) %>
   </div>
-  <%= render @user %>
+  
+  	<div>
+  		<h1> <%= @user.name %> </h1>
+	</div>
+
+	<div>
+  		<%= @user.email %>
+	</div>
+
+	<h4> User activity </h4>
+
+  <ul>
+	<li>
+		<div>
+  			<%= pluralize(@nr_q, "question") %>
+  		</div>
+	</li>
+	<li>
+		<div>
+  		<%= pluralize(@nr_a, "answer") %>
+  		</div>
+  	</li>
+  </ul>
+
   </aside>
 
   <div class="row span8">
