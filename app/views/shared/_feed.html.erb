@@ -1,11 +1,9 @@
 <% @questions.each do |question| %>
   <% if !question.user.nil? && !question.course.nil?%>
-    
-		<div class="chenar_intrebare">
 
 			<div class="question-block">
 			<div class="chenar_name">
-		   	 <div class="question-info"> <%= question.user.name %> asked:</div>
+		   	 <div class="question-info"> <%= link_to question.user.name, question.user %> asked:</div>
 			</div>
 			<hr > </hr>
 		    	<div class="question-block-content"><%= question.content %></div>
@@ -28,7 +26,6 @@
 		  <div class="answer-question">
 		    <%= render partial: 'shared/answer_form', locals: { question: question } %>
 		  </div>
-	</div>
 
     <br><!-- somebody please remove this shitty break!
              Hint: Use fucking CSS (margin-bottom somsing, somsing in class question-block in custom.css.scss) -->

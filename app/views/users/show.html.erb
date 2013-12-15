@@ -1,6 +1,8 @@
 <% provide :title, "#{@user.name}" %>
 
-<h1> <%= @user.name %> </h1>
+<div>
+	<%= gravatar_for(@user, size: 150) %>
+</div>
 
 <%= render @user %>
 
