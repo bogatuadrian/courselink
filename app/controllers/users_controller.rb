@@ -15,6 +15,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @questions = @user.questions
+    @nr_q = @user.questions.length
+    @nr_a = @user.answers.length
   end
 
   def create
