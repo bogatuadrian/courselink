@@ -35,6 +35,13 @@
 </div>
 -->
 <aside class="span4">
+
+	                <div>
+                  <%= gravatar_for(current_user, size: 64) %>
+                  <%= current_user.name %>
+                </div>
+
+             <br><br>
   <!--<div>
     <%= render current_user %>
   </div>
